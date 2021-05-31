@@ -1,12 +1,11 @@
-import React, {useState,useEffect,useContext} from "react";
+import React, {useState,useContext} from "react";
 import { userContext } from "../App"
+import useDocumentTitle from "../hooks/UseDocumentTitle";
 
 function HookCounter () {
     const [count, setCount] = useState(0)
     const user = useContext(userContext)
-    useEffect(()=>{
-        document.title=`you clicked ${count} times`
-    })
+    useDocumentTitle(count)
     return (
     <div>
         Welcome {user}
